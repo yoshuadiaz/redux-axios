@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  loadCharacters: () => dispatch({type: actions.LOAD})
+  loadCharacters: (page) => dispatch({type: actions.LOAD, payload: page})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharactersView)
