@@ -1,13 +1,7 @@
 import React from 'react'
-
-const CharacterItem = props => <div>
-        <h2>{props.data.name}</h2>
-        <img src={props.data.image} alt=""/>
-      </div>
+import CharacterItem from '../components/character/CharacterItem'
+import './character.css'
 class Character extends React.Component {
-  constructor(){
-    super()
-  }
   componentDidMount(){
     this.props.loadCharacters()
   }
@@ -15,7 +9,9 @@ class Character extends React.Component {
     return <div>
       <h1>Personajes</h1>
       <hr/>
+      <div className="characterList">
       {this.props.characters.map(character => <CharacterItem data={character}></CharacterItem>)}
+      </div>
     </div>
   }
 }
