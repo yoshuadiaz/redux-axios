@@ -1,0 +1,6 @@
+.episodeItem {
+  box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.3);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin: 0.5em 0;
+}

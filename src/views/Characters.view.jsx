@@ -3,7 +3,9 @@ import CharacterItem from '../components/character/CharacterItem'
 import './character.css'
 class Character extends React.Component {
   componentDidMount(){
-    this.props.loadCharacters()
+    if(this.props.characters.length === 0){
+      this.props.loadCharacters()
+    }
   }
   render(){
     return <div>

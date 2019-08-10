@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import EpisodesView from '../views/Episodes.view'
+import Actions from '../core/modules/episodes/episodes.actions'
 
 const mapStateToProps = state => ({
   episodes: state.Episodes.items,
@@ -7,4 +8,10 @@ const mapStateToProps = state => ({
   hasError: state.Episodes.hasError
 })
 
-export default connect(mapStateToProps)(EpisodesView)
+const mapDispatchToProps = dispatch => ({
+  loadEpisodes: () => dispatch({
+    type:Actions.LOAD
+  })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EpisodesView)
